@@ -1,0 +1,96 @@
+:root {
+    --bg-color: #0f1115;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --card-bg: #1e222a;
+    --card-border: #2d3340;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --button-bg: #2a303c;
+    --button-hover: #374151;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px 20px 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.node {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease forwards;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.node-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    background: var(--button-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--card-border);
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.option-btn:hover:not(:disabled) {
+    background: var(--button-hover);
+    border-color: var(--text-secondary);
+}
+
+.option-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.option-btn.selected {
+    background: var(--accent-color);
+    border-color: var(--accent-hover);
+    color: white;
+    opacity: 1;
+}
+
+.summary-text {
+    color: var(--accent-color);
+    font-weight: 500;
+}
